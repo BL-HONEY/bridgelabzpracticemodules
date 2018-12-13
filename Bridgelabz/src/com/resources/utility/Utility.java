@@ -1,5 +1,6 @@
 package com.resources.utility;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -9,6 +10,7 @@ import java.util.Scanner;
 public class Utility 
 {
 	static Scanner sc = new Scanner(System.in);
+	static Random rand = new Random();
 	  static int count1=1;
 
 	
@@ -234,6 +236,41 @@ public class Utility
 	}
 	
 	
+	public static int decider(int stack,int target,int bet)
+	{
+		int loss=0,win=0,turns=0;
+		
+		while(stack>=0 && stack<=target)
+		{
+
+			int flag = rand.nextInt(2);
+			if(flag==0)
+			{
+			  stack = stack - bet;
+			  ++loss;	  
+			}
+			else
+			{
+				stack = stack + bet;
+				++win;
+			}	
+		}
+		
+		turns = loss + win;
+		
+		calPercentage(win,loss,turns);
+		
+		return win;
+	}
+	
+	public static void calPercentage(int win,int loss,int turns)
+	{
+		double winPercent = (double)(win*100/turns);
+		double lossPercent = (double)(loss*100/turns);
+		
+		System.out.println("WIN Percentage: "+ winPercent);
+		System.out.println("LOSS Percentage: "+ lossPercent);
+	}
 	
 	
 	
@@ -241,6 +278,25 @@ public class Utility
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
 	
 	
 }

@@ -23,7 +23,7 @@ public class Quadratic
       
       int[] roots = Utility.findRoots(a, b, c);
       
-      for(int i=0 ; i<2 ; i++)
+      for(int i=0 ; i<2 ; i++)          
     	  System.out.println("roots are "+ roots[i]);
       
 	}

@@ -25,7 +25,7 @@ public class Gambler
       System.out.println("Target: "+target);
       System.out.println("Fixed Bet Amount: "+bet);
       
-      int wins = Utility.decider(stack,target,bet);
+      int wins = Utility.calWins(stack,target,bet);
       
       System.out.println("Total wins: "+ wins);
 	}
